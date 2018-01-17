@@ -41,7 +41,7 @@
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
     <div class="left-col" q-class="show:isShow">
       
-<embed src="//music.163.com/style/swf/widget.swf?sid=32419802&type=2&auto=1&width=278&height=32" width="298" height="52"  allowNetworking="all"></embed>
+<embed src="//music.163.com/style/swf/widget.swf?sid=21041373&type=2&auto=1&width=278&height=32" width="298" height="52"  allowNetworking="all"></embed>
 <div class="overlay" style="background: #4d4d4d"></div>
 <div class="intrude-less">
 	<header id="header" class="inner">
@@ -158,6 +158,228 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-Java工具类" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/17/Java工具类/">Java工具类</a>
+    </h1>
+  
+
+        
+        <a href="/2018/01/17/Java工具类/" class="archive-article-date">
+  	<time datetime="2018-01-17T11:59:02.416Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="日期工具类"><a href="#日期工具类" class="headerlink" title="日期工具类"></a>日期工具类</h2><p>字符串与日期的转换：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">import java.text.SimpleDateFormat;</div><div class="line">import java.util.Date;</div><div class="line"></div><div class="line">public class DateUtil &#123;</div><div class="line">    //日期转字符</div><div class="line">	public static String formatDate(Date date,String format)&#123;</div><div class="line">		String result=&quot;&quot;;</div><div class="line">		SimpleDateFormat sdf=new SimpleDateFormat(format);</div><div class="line">		if(date!=null)&#123;</div><div class="line">			result=sdf.format(date);</div><div class="line">		&#125;</div><div class="line">		return result;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	//字符转日期</div><div class="line">	public static Date formatString(String str,String format) throws Exception&#123;</div><div class="line">		if(StringUtil.isEmpty(str))&#123;</div><div class="line">			return null;</div><div class="line">		&#125;</div><div class="line">		SimpleDateFormat sdf=new SimpleDateFormat(format);</div><div class="line">		return sdf.parse(str);</div><div class="line">	&#125;</div><div class="line">	//获取当前时间</div><div class="line">	public static String getCurrentDateStr()throws Exception&#123;</div><div class="line">		Date date=new Date();</div><div class="line">		SimpleDateFormat sdf=new SimpleDateFormat(&quot;yyyyMMddhhmmss&quot;);</div><div class="line">		return sdf.format(date);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="数据库连接工具类"><a href="#数据库连接工具类" class="headerlink" title="数据库连接工具类"></a>数据库连接工具类</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">public class DbUtil &#123;</div><div class="line"></div><div class="line">	//获得连接</div><div class="line">	public Connection getCon() throws Exception&#123;</div><div class="line">		Class.forName(PropertiesUtil.getValue(&quot;jdbcName&quot;));</div><div class="line">		Connection con=DriverManager.getConnection(PropertiesUtil.getValue(&quot;dbUrl&quot;), PropertiesUtil.getValue(&quot;dbUserName&quot;), PropertiesUtil.getValue(&quot;dbPassword&quot;));</div><div class="line">		return con;</div><div class="line">	&#125;</div><div class="line">	//关闭连接</div><div class="line">	public void closeCon(Connection con)throws Exception&#123;</div><div class="line">		if(con!=null)&#123;</div><div class="line">			con.close();</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="加密工具类"><a href="#加密工具类" class="headerlink" title="加密工具类"></a>加密工具类</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">public class MD5Util &#123;</div><div class="line"></div><div class="line">	public static String EncoderPwdByMd5(String str) throws NoSuchAlgorithmException, UnsupportedEncodingException&#123;</div><div class="line">		MessageDigest md5=MessageDigest.getInstance(&quot;MD5&quot;);</div><div class="line">		BASE64Encoder base64en=new BASE64Encoder();</div><div class="line">		return base64en.encode(md5.digest(str.getBytes(&quot;utf-8&quot;)));</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="读取配置文件"><a href="#读取配置文件" class="headerlink" title="读取配置文件"></a>读取配置文件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">public class PropertiesUtil &#123;</div><div class="line"></div><div class="line">	public static String getValue(String key)&#123;</div><div class="line">		Properties prop=new Properties();</div><div class="line">		InputStream in=new PropertiesUtil().getClass().getResourceAsStream(&quot;/setting.properties&quot;);</div><div class="line">		try &#123;</div><div class="line">			prop.load(in);</div><div class="line">		&#125; catch (IOException e) &#123;</div><div class="line">			// TODO Auto-generated catch block</div><div class="line">			e.printStackTrace();</div><div class="line">		&#125;</div><div class="line">		return (String)prop.get(key);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="字符串工具类"><a href="#字符串工具类" class="headerlink" title="字符串工具类"></a>字符串工具类</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">public class StringUtil &#123;</div><div class="line"></div><div class="line">	    public static boolean isEmpty(String str)&#123;</div><div class="line">		if(str==null || &quot;&quot;.equals(str.trim()))&#123;</div><div class="line">			return true;</div><div class="line">		&#125;else&#123;</div><div class="line">			return false;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">		public static boolean isNotEmpty(String str)&#123;</div><div class="line">		if(str!=null &amp;&amp; !&quot;&quot;.equals(str.trim()))&#123;</div><div class="line">			return true;</div><div class="line">		&#125;else&#123;</div><div class="line">			return false;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	    public static String formatLike(String str)&#123;</div><div class="line">		if(isNotEmpty(str))&#123;</div><div class="line">			return &quot;%&quot;+str+&quot;%&quot;;</div><div class="line">		&#125;else&#123;</div><div class="line">			return null;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/01/17/Java工具类/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-Mysql-select-statement" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/17/Mysql-select-statement/">Mysql select statement</a>
+    </h1>
+  
+
+        
+        <a href="/2018/01/17/Mysql-select-statement/" class="archive-article-date">
+  	<time datetime="2018-01-17T11:56:48.632Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="select-statement可以从表或视图中查询数据"><a href="#select-statement可以从表或视图中查询数据" class="headerlink" title="select statement可以从表或视图中查询数据"></a>select statement可以从表或视图中查询数据</h3><hr>
+<p>syntax of the SELECT statement:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">SELECT </div><div class="line">    column_1, column_2, ...</div><div class="line">FROM</div><div class="line">    table_1</div><div class="line">[INNER | LEFT |RIGHT] JOIN table_2 ON conditions</div><div class="line">WHERE</div><div class="line">    conditions</div><div class="line">GROUP BY column_1</div><div class="line">HAVING group_conditions</div><div class="line">ORDER BY column_1</div><div class="line">LIMIT offset, length;</div></pre></td></tr></table></figure>
+<p>SELECT statement examples：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">SELECT</div><div class="line">lastname,firstname,jobtype </div><div class="line">FROM</div><div class="line">employees;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELECT * FROM employees;</div></pre></td></tr></table></figure>
+<hr>
+<h3 id="MySQL-DISTINCT-clause"><a href="#MySQL-DISTINCT-clause" class="headerlink" title="MySQL DISTINCT clause"></a>MySQL DISTINCT clause</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">SELECT DISTINCT</div><div class="line">    columns</div><div class="line">FROM</div><div class="line">    table_name</div><div class="line">WHERE</div><div class="line">    where_conditions;</div></pre></td></tr></table></figure>
+<p>MySQL DISTINCT example:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">SELECT DISTINCT</div><div class="line">lastname </div><div class="line">FROM</div><div class="line">employees</div><div class="line">ORDER BY lastname;</div></pre></td></tr></table></figure>
+<ol>
+<li>If a column has NULL values and you use the DISTINCT clause for that column, MySQL keeps one NULL value and eliminates the other.</li>
+<li>use the DISTINCT clause with more than one column. In this case, MySQL uses the combination of all columns to determine the uniqueness of the row in the result set.</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">SELECT DISTINCT</div><div class="line">    state, city</div><div class="line">FROM</div><div class="line">    customers</div><div class="line">WHERE</div><div class="line">    state IS NOT NULL</div><div class="line">ORDER BY state , city;</div></pre></td></tr></table></figure>
+<ol>
+<li>use the GROUP BY clause in the SELECT statement without using aggregate functions, the GROUP BY clause behaves like the DISTINCT clause.</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">SELECT</div><div class="line">  state</div><div class="line">FROM</div><div class="line">  customers</div><div class="line">GROUP BY</div><div class="line">  state;</div></pre></td></tr></table></figure>
+<ol>
+<li>use the DISTINCT clause with an aggregate function e.g., SUM, AVG, and COUNT, to remove duplicate rows before MySQL applies the aggregate function to the result set.</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">SELECT </div><div class="line">    COUNT(DISTINCT state)</div><div class="line">FROM</div><div class="line">    customers</div><div class="line">WHERE</div><div class="line">    country = &apos;USA&apos;;</div></pre></td></tr></table></figure>
+<ol>
+<li>use the DISTINCT clause with the LIMIT clause, MySQL stops searching immediately when it finds the number of unique rows specified in the LIMIT clause</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">SELECT DISTINCT</div><div class="line">    state</div><div class="line">FROM</div><div class="line">    customers</div><div class="line">WHERE</div><div class="line">    state IS NOT NULL</div><div class="line">LIMIT 5;</div></pre></td></tr></table></figure>
+<h3 id="WHERE-clause"><a href="#WHERE-clause" class="headerlink" title="WHERE clause"></a>WHERE clause</h3><p>use WHERE clause to specify exact rows to select based on particular filter express or condition</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">SELECT </div><div class="line">    lastname,firstname,jobtype</div><div class="line">FROM</div><div class="line">    employees</div><div class="line">WHERE</div><div class="line">    jobtype=&apos;Sales Rep&apos; AND officeCode = 1;</div></pre></td></tr></table></figure>
+<p>the comparison operators that can use to form filtering expressions in the WHERE clause.</p>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>=</td>
+<td>Equal to. You can use it with almost any data types.</td>
+</tr>
+<tr>
+<td>&lt;&gt; or !=</td>
+<td>Not equal to.</td>
+</tr>
+<tr>
+<td>&lt;</td>
+<td>Less than. You typically use it with numeric and date/time data types.</td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td>Greater than.</td>
+</tr>
+<tr>
+<td>&lt;=</td>
+<td>Less than or equal to</td>
+</tr>
+<tr>
+<td>&gt;=</td>
+<td>Greater than or equal to</td>
+</tr>
+</tbody>
+</table>
+<p>Note:</p>
+<hr>
+<ol>
+<li>some useful operators that you can use in the WHERE clause to form complex conditions:BETWEEN,LIKE,IN,IS NULL. </li>
+<li>The WHERE clause is used not only with the SELECT statement but also other SQL statements to filter rows such as DELETE and UPDATE.<h3 id="ORDER-BY-clause"><a href="#ORDER-BY-clause" class="headerlink" title="ORDER BY clause"></a>ORDER BY clause</h3>use the ORDER BY clause to sort the result set</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">SELECT column1, column2,...</div><div class="line">FROM tbl</div><div class="line">ORDER BY column1 [ASC|DESC], column2 [ASC|DESC],...</div></pre></td></tr></table></figure>
+<p>ORDER BY sort by an expression example:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">SELECT</div><div class="line"> ordernumber,</div><div class="line"> orderlinenumber,</div><div class="line"> quantityOrdered * priceEach AS subtotal</div><div class="line">FROM</div><div class="line"> orderdetails</div><div class="line">ORDER BY</div><div class="line"> ordernumber,</div><div class="line"> orderLineNumber,</div><div class="line"> subtotal;</div></pre></td></tr></table></figure>
+<p>ORDER BY with customer sort order:<br>define custom sort order use FIELD() function</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">SELECT </div><div class="line">    orderNumber, status</div><div class="line">FROM</div><div class="line">    orders</div><div class="line">ORDER BY FIELD(status,</div><div class="line">        &apos;In Process&apos;,</div><div class="line">        &apos;On Hold&apos;,</div><div class="line">        &apos;Cancelled&apos;,</div><div class="line">        &apos;Resolved&apos;,</div><div class="line">        &apos;Disputed&apos;,</div><div class="line">        &apos;Shipped&apos;);</div></pre></td></tr></table></figure>
+<p>Natural Sorting with ORDER BY Clause:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">SELECT </div><div class="line">    item_no</div><div class="line">FROM</div><div class="line">    items</div><div class="line">ORDER BY CAST(item_no AS UNSIGNED) , item_no;</div></pre></td></tr></table></figure>
+<p>the LENGTH function returns the length of a string<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">SELECT </div><div class="line">    item_no</div><div class="line">FROM</div><div class="line">    items</div><div class="line">ORDER BY LENGTH(item_no) , item_no;</div></pre></td></tr></table></figure></p>
+<p>use the parentheses statement returns the customers who locate in the USA or France and have credit limit greater than 10000:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">SELECT </div><div class="line">    customername, country, creditLimit</div><div class="line">FROM</div><div class="line">    customers</div><div class="line">WHERE</div><div class="line">    (country = &apos;USA&apos; OR country = &apos;France&apos;)</div><div class="line">        AND creditlimit &gt; 100000;</div></pre></td></tr></table></figure>
+<h3 id="IN-Operator"><a href="#IN-Operator" class="headerlink" title="IN Operator"></a>IN Operator</h3><p>The IN  operator allows you to determine if a specified value matches any one of a list or a subquery:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">SELECT </div><div class="line">    column1,column2,...</div><div class="line">FROM</div><div class="line">    table_name</div><div class="line">WHERE </div><div class="line"> (expr|column_1) IN (&apos;value1&apos;,&apos;value2&apos;,...);</div></pre></td></tr></table></figure>
+<p>find out the offices that locate in the U.S. and France:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">SELECT </div><div class="line">    officeCode, city, phone, country</div><div class="line">FROM</div><div class="line">    offices</div><div class="line">WHERE</div><div class="line">    country IN (&apos;USA&apos; , &apos;France&apos;);</div></pre></td></tr></table></figure>
+<p>get offices that do not locate in USA and France, you use NOT IN  in the WHERE clause:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">SELECT </div><div class="line">    officeCode, city, phone</div><div class="line">FROM</div><div class="line">    offices</div><div class="line">WHERE</div><div class="line">    country NOT IN (&apos;USA&apos; , &apos;France&apos;);</div></pre></td></tr></table></figure>
+<p>MySQL IN with subquery:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">SELECT </div><div class="line">    orderNumber, customerNumber, status, shippedDate</div><div class="line">FROM</div><div class="line">    orders</div><div class="line">WHERE</div><div class="line">    orderNumber IN (SELECT </div><div class="line">            orderNumber</div><div class="line">        FROM</div><div class="line">            orderDetails</div><div class="line">        GROUP BY orderNumber</div><div class="line">        HAVING SUM(quantityOrdered * priceEach) &gt; 60000);</div></pre></td></tr></table></figure>
+<h3 id="BETWEEN-Operator"><a href="#BETWEEN-Operator" class="headerlink" title="BETWEEN Operator"></a>BETWEEN Operator</h3><p>use the BETWEEN operator in the WHERE clause of the SELECT, INSERT, UPDATE, and DELETE statements:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">expr [NOT] BETWEEN begin_expr AND end_expr;</div></pre></td></tr></table></figure>
+<p>find products whose buy prices are within the ranges of $90 and $100:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">SELECT </div><div class="line">    productCode, productName, buyPrice</div><div class="line">FROM</div><div class="line">    products</div><div class="line">WHERE</div><div class="line">    buyPrice BETWEEN 90 AND 100;</div></pre></td></tr></table></figure>
+<p>get the orders whose required dates are from 01/01/2003 to 01/31/2003:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">SELECT orderNumber,</div><div class="line">         requiredDate,</div><div class="line">         status</div><div class="line">FROM orders</div><div class="line">WHERE requireddate</div><div class="line">    BETWEEN CAST(&apos;2003-01-01&apos; AS DATE)</div><div class="line">        AND CAST(&apos;2003-01-31&apos; AS DATE);</div></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Mysql</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/01/17/Mysql-select-statement/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
   
     <article id="post-林夕语录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -512,6 +734,14 @@
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Mysql</a>
+              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随笔</a>
