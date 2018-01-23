@@ -14,7 +14,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/01/23/商城框架搭建/index.html">
 <meta property="og:site_name" content="行者无疆">
 <meta property="og:description" content="实体类，声明了id和name,以及对应的setter,getter123456789101112131415161718192021public class Category &amp;#123;    private Integer id;     private String name;     public Integer getId() &amp;#123;        return id;    &amp;#">
-<meta property="og:updated_time" content="2018-01-23T01:41:10.945Z">
+<meta property="og:updated_time" content="2018-01-23T02:03:38.372Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="商城框架搭建">
 <meta name="twitter:description" content="实体类，声明了id和name,以及对应的setter,getter123456789101112131415161718192021public class Category &amp;#123;    private Integer id;     private String name;     public Integer getId() &amp;#123;        return id;    &amp;#">
@@ -179,6 +179,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="实体类，声明了id和name-以及对应的setter-getter"><a href="#实体类，声明了id和name-以及对应的setter-getter" class="headerlink" title="实体类，声明了id和name,以及对应的setter,getter"></a>实体类，声明了id和name,以及对应的setter,getter</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">public class Category &#123;</div><div class="line">    private Integer id;</div><div class="line"> </div><div class="line">    private String name;</div><div class="line"> </div><div class="line">    public Integer getId() &#123;</div><div class="line">        return id;</div><div class="line">    &#125;</div><div class="line"> </div><div class="line">    public void setId(Integer id) &#123;</div><div class="line">        this.id = id;</div><div class="line">    &#125;</div><div class="line"> </div><div class="line">    public String getName() &#123;</div><div class="line">        return name;</div><div class="line">    &#125;</div><div class="line"> </div><div class="line">    public void setName(String name) &#123;</div><div class="line">        this.name = name == null ? null : name.trim();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<a id="more"></a>
 <h3 id="创建接口CategoryMapper，声明list方法"><a href="#创建接口CategoryMapper，声明list方法" class="headerlink" title="创建接口CategoryMapper，声明list方法"></a>创建接口CategoryMapper，声明list方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">import java.util.List;</div><div class="line"> </div><div class="line">public interface CategoryMapper &#123;</div><div class="line">    List&lt;Category&gt; list();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="创建接口CategoryService，声明list方法"><a href="#创建接口CategoryService，声明list方法" class="headerlink" title="创建接口CategoryService，声明list方法"></a>创建接口CategoryService，声明list方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">import java.util.List;</div><div class="line">public interface CategoryService&#123;</div><div class="line">    List&lt;Category&gt; list();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="创建CategoryService接口的实现类CategoryServiceImpl"><a href="#创建CategoryService接口的实现类CategoryServiceImpl" class="headerlink" title="创建CategoryService接口的实现类CategoryServiceImpl"></a>创建CategoryService接口的实现类CategoryServiceImpl</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">import org.springframework.beans.factory.annotation.Autowired;</div><div class="line">import org.springframework.stereotype.Service;</div><div class="line">import java.util.List;</div><div class="line">@Service</div><div class="line">public class CategoryServiceImpl  implements CategoryService &#123;</div><div class="line">    @Autowired</div><div class="line">    CategoryMapper categoryMapper;</div><div class="line">    public List&lt;Category&gt; list()&#123;</div><div class="line">        return categoryMapper.list();</div><div class="line">    &#125;;</div><div class="line"> </div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -418,11 +419,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color1">SSM商城</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">SSM商城</a>
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
