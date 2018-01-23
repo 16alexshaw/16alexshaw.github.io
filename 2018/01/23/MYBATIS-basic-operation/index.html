@@ -6,17 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2018 | 行者无疆</title>
+  <title>MYBATIS basic operation | 行者无疆</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="知识管理，时间管理，自我管理，阅读，语音写作，思维导图">
-<meta property="og:type" content="website">
-<meta property="og:title" content="行者无疆">
-<meta property="og:url" content="http://yoursite.com/archives/2018/index.html">
+  <meta name="description" content="MyBatis is an open source, lightweight, persistence framework. It automates the mapping between SQL databases and objects in Java. The mappings are decoupled from the application logic by packaging th">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MYBATIS basic operation">
+<meta property="og:url" content="http://yoursite.com/2018/01/23/MYBATIS-basic-operation/index.html">
 <meta property="og:site_name" content="行者无疆">
-<meta property="og:description" content="知识管理，时间管理，自我管理，阅读，语音写作，思维导图">
+<meta property="og:description" content="MyBatis is an open source, lightweight, persistence framework. It automates the mapping between SQL databases and objects in Java. The mappings are decoupled from the application logic by packaging th">
+<meta property="og:updated_time" content="2018-01-23T01:44:11.074Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="行者无疆">
-<meta name="twitter:description" content="知识管理，时间管理，自我管理，阅读，语音写作，思维导图">
+<meta name="twitter:title" content="MYBATIS basic operation">
+<meta name="twitter:description" content="MyBatis is an open source, lightweight, persistence framework. It automates the mapping between SQL databases and objects in Java. The mappings are decoupled from the application logic by packaging th">
   
     <link rel="alternative" href="/atom.xml" title="行者无疆" type="application/atom+xml">
   
@@ -157,36 +158,68 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-MYBATIS-basic-operation" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      MYBATIS basic operation
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/23/MYBATIS-basic-operation/" class="archive-article-date">
+
+        
+        <a href="/2018/01/23/MYBATIS-basic-operation/" class="archive-article-date">
   	<time datetime="2018-01-23T01:43:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-23</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/23/MYBATIS-basic-operation/">MYBATIS basic operation</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>MyBatis is an open source, lightweight, persistence framework. It automates the mapping between SQL databases and objects in Java. The mappings are decoupled from the application logic by packaging the SQL statements in XML configuration files.</p>
+<h3 id="configure-the-details-of-the-database"><a href="#configure-the-details-of-the-database" class="headerlink" title="configure the details of the database"></a>configure the details of the database</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version = &quot;1.0&quot; encoding = &quot;UTF-8&quot;?&gt;</div><div class="line"></div><div class="line">&lt;!DOCTYPE configuration PUBLIC &quot;-//mybatis.org//DTD Config 3.0//EN&quot; &quot;http://mybatis.org/dtd/mybatis-3-config.dtd&quot;&gt;</div><div class="line">&lt;configuration&gt;</div><div class="line">		</div><div class="line">   &lt;environments default = &quot;development&quot;&gt;</div><div class="line">      &lt;environment id = &quot;development&quot;&gt;</div><div class="line">         &lt;transactionManager type = &quot;JDBC&quot;/&gt; </div><div class="line">			</div><div class="line">         &lt;dataSource type = &quot;POOLED&quot;&gt;</div><div class="line">            &lt;property name = &quot;driver&quot; value = &quot;com.mysql.jdbc.Driver&quot;/&gt;</div><div class="line">            &lt;property name = &quot;url&quot; value = &quot;jdbc:mysql://localhost:3306/details&quot;/&gt;</div><div class="line">            &lt;property name = &quot;username&quot; value = &quot;root&quot;/&gt;</div><div class="line">            &lt;property name = &quot;password&quot; value = &quot;password&quot;/&gt;</div><div class="line">         &lt;/dataSource&gt;   </div><div class="line">         </div><div class="line">      &lt;/environment&gt;</div><div class="line">   &lt;/environments&gt;</div><div class="line">	</div><div class="line">   &lt;mappers&gt;</div><div class="line">      &lt;mapper resource = &quot;mybatis/Student.xml&quot;/&gt;</div><div class="line">   &lt;/mappers&gt;</div><div class="line">   </div><div class="line">&lt;/configuration&gt;</div></pre></td></tr></table></figure>
+<h3 id="The-POJO-class"><a href="#The-POJO-class" class="headerlink" title="The POJO class"></a>The POJO class</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">public class Student &#123;</div><div class="line">   private int id;</div><div class="line">   private String name;</div><div class="line">   private String branch;</div><div class="line">   private int percentage;</div><div class="line">   private int phone;</div><div class="line">   private String email;</div><div class="line">   </div><div class="line">   //Setters and getters   </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="Mapped-Statements"><a href="#Mapped-Statements" class="headerlink" title="Mapped Statements"></a>Mapped Statements</h3><p>Mapped SQL statements are resided within the element named <mapper>. This element contains an attribute called ‘namespace’:</mapper></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;mapper namespace = &quot;Student&quot;&gt;</div><div class="line">   //mapped statements and result maps</div><div class="line">&lt;mapper&gt;</div></pre></td></tr></table></figure>
+<p>id is unique identifier used to identify the insert statement. On the other hand, parametertype is the class name or the alias of the parameter that will be passed into the statement:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;insert id = &quot;insert&quot; parameterType = &quot;Student&quot;&gt;</div><div class="line">   INSERT INTO STUDENT1 (NAME, BRANCH, PERCENTAGE, PHONE, EMAIL ) </div><div class="line">   VALUES (#&#123;name&#125;, #&#123;branch&#125;, #&#123;percentage&#125;, #&#123;phone&#125;, #&#123;email&#125;);    </div><div class="line">&lt;/insert&gt;</div><div class="line"></div><div class="line">&lt;update id = &quot;update&quot; parameterType = &quot;Student&quot;&gt;</div><div class="line">   UPDATE STUDENT SET EMAIL = #&#123;email&#125;, NAME = #&#123;name&#125;, BRANCH = #&#123;branch&#125;, PERCENTAGE = #&#123;percentage&#125;, PHONE = #&#123;phone&#125; WHERE ID = #&#123;id&#125;;</div><div class="line">&lt;/update&gt;</div><div class="line"></div><div class="line">&lt;delete id = &quot;deleteById&quot; parameterType = &quot;int&quot;&gt;</div><div class="line">   DELETE from STUDENT WHERE ID = #&#123;id&#125;;</div><div class="line">&lt;/delete&gt;</div></pre></td></tr></table></figure>
+<p>invoke the ‘insert’ mapped query:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//Assume session is an SqlSession object.  </div><div class="line">session.insert(&quot;Student.insert&quot;, student);</div><div class="line">session.update(&quot;Student.update&quot;,student);</div><div class="line">session.delete(&quot;Student.deleteById&quot;, 18);</div></pre></td></tr></table></figure>
+<h4 id="resultMaps"><a href="#resultMaps" class="headerlink" title="resultMaps"></a>resultMaps</h4><p>maps the results of the select queries to the Student class</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&lt;resultMap id = &quot;result&quot; type = &quot;Student&quot;&gt;</div><div class="line">   &lt;result property = &quot;id&quot; column = &quot;ID&quot;/&gt;</div><div class="line">   &lt;result property = &quot;name&quot; column = &quot;NAME&quot;/&gt;</div><div class="line">   &lt;result property = &quot;branch&quot; column = &quot;BRANCH&quot;/&gt;</div><div class="line">   &lt;result property = &quot;percentage&quot; column = &quot;PERCENTAGE&quot;/&gt;</div><div class="line">   &lt;result property = &quot;phone&quot; column = &quot;PHONE&quot;/&gt;</div><div class="line">   &lt;result property = &quot;email&quot; column = &quot;EMAIL&quot;/&gt;</div><div class="line">&lt;/resultMap&gt;</div><div class="line"></div><div class="line">&lt;select id = &quot;getAll&quot; resultMap = &quot;result&quot;&gt;</div><div class="line">   SELECT * FROM STUDENT; </div><div class="line">&lt;/select&gt;</div><div class="line"></div><div class="line">&lt;select id = &quot;getById&quot; parameterType = &quot;int&quot; resultMap = &quot;result&quot;&gt;</div><div class="line">   SELECT * FROM STUDENT WHERE ID = #&#123;id&#125;;</div><div class="line">&lt;/select&gt;</div></pre></td></tr></table></figure>
+<p>The method returns the data of the selected record in the form of List:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">List&lt;Student&gt; list = session.selectList(&quot;Student.getAll&quot;);</div></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -198,247 +231,89 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2018/01/23/MYBATIS-basic-operation/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/23/MYBATIS-Dynamic-SQL/" class="archive-article-date">
-  	<time datetime="2018-01-23T01:41:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-23</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/23/MYBATIS-Dynamic-SQL/">MYBATIS Dynamic SQL</a>
-    </h1>
+  
+    <a href="/2018/01/23/MYBATIS-Dynamic-SQL/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">MYBATIS Dynamic SQL</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+    <div class="duoshuo"></div>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">MYBATIS</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/23/SSM-类别增加/" class="archive-article-date">
-  	<time datetime="2018-01-23T01:40:09.316Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/23/SSM-类别增加/">SSM 类别增加</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SSM商城</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/23/商城框架搭建/" class="archive-article-date">
-  	<time datetime="2018-01-23T01:37:19.281Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/23/商城框架搭建/">商城框架搭建</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SSM商城</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/17/Java工具类/" class="archive-article-date">
-  	<time datetime="2018-01-17T11:59:02.416Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/17/Java工具类/">Java工具类</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/17/Mysql-select-statement/" class="archive-article-date">
-  	<time datetime="2018-01-17T11:56:48.632Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/17/Mysql-select-statement/">Mysql select statement</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Mysql</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/02/林夕语录/" class="archive-article-date">
-  	<time datetime="2018-01-02T02:53:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/02/林夕语录/">林夕语录</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -461,8 +336,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
