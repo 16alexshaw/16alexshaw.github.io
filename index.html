@@ -159,6 +159,79 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-SSM-类别删除" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/14/SSM-类别删除/">SSM 类别删除</a>
+    </h1>
+  
+
+        
+        <a href="/2018/03/14/SSM-类别删除/" class="archive-article-date">
+  	<time datetime="2018-03-14T01:31:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="用于删除的超链"><a href="#用于删除的超链" class="headerlink" title="用于删除的超链"></a>用于删除的超链</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;a deleteLink=&quot;true&quot; href=&quot;admin_category_delete?id=$&#123;c.id&#125;&quot;&gt;&lt;span class=&quot; 	glyphicon glyphicon-trash&quot;&gt;&lt;/span&gt;&lt;/a&gt;</div></pre></td></tr></table></figure>
+<h3 id="删除前的确认操作"><a href="#删除前的确认操作" class="headerlink" title="删除前的确认操作"></a>删除前的确认操作</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">$(function()&#123;</div><div class="line">	$(&quot;a&quot;).click(function()&#123;</div><div class="line">		var deleteLink = $(this).attr(&quot;deleteLink&quot;);</div><div class="line">		console.log(deleteLink);</div><div class="line">		if(&quot;true&quot;==deleteLink)&#123;</div><div class="line">			var confirmDelete = confirm(&quot;确认要删除&quot;);</div><div class="line">			if(confirmDelete)</div><div class="line">				return true;</div><div class="line">			return false;</div><div class="line">			</div><div class="line">		&#125;</div><div class="line">	&#125;);</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h3 id="增加删除sql语句"><a href="#增加删除sql语句" class="headerlink" title="增加删除sql语句"></a>增加删除sql语句</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</div><div class="line">&lt;!DOCTYPE mapper</div><div class="line">        PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot;</div><div class="line">        &quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;</div><div class="line"></div><div class="line">&lt;mapper namespace=&quot;com.how2java.tmall.mapper.CategoryMapper&quot;&gt;</div><div class="line">    &lt;select id=&quot;list&quot; resultType=&quot;Category&quot;&gt;</div><div class="line">        select * from   category         order by id desc</div><div class="line">        &lt;if test=&quot;start!=null and count!=null&quot;&gt;</div><div class="line">            limit #&#123;start&#125;,#&#123;count&#125;</div><div class="line">        &lt;/if&gt;</div><div class="line"></div><div class="line">    &lt;/select&gt;</div><div class="line">    &lt;select id=&quot;total&quot; resultType=&quot;int&quot;&gt;</div><div class="line">        select count(*) from category</div><div class="line">    &lt;/select&gt;</div><div class="line">    &lt;insert id=&quot;add&quot;  keyProperty=&quot;id&quot;  useGeneratedKeys=&quot;true&quot; parameterType=&quot;Category&quot; &gt;</div><div class="line">        insert into category ( name ) values (#&#123;name&#125;)</div><div class="line">    &lt;/insert&gt;</div><div class="line">    &lt;delete id=&quot;delete&quot;&gt;</div><div class="line">        delete from category where id= #&#123;id&#125;</div><div class="line">    &lt;/delete&gt;</div><div class="line">&lt;/mapper&gt;</div></pre></td></tr></table></figure>
+<h3 id="CategoryController"><a href="#CategoryController" class="headerlink" title="CategoryController"></a>CategoryController</h3><ol>
+<li>映射路径admin_category_delete</li>
+<li>提供参数接受id注入</li>
+<li>提供session参数，用于后续定位文件位置</li>
+<li>通过categoryService删除数据</li>
+<li>通过session获取ControllerContext然后获取分类图片位置，接着删除分类图片</li>
+<li>客户端跳转到 admin_category_list</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">@RequestMapping(&quot;admin_category_delete&quot;)</div><div class="line">  public String delete(int id,HttpSession session) throws IOException &#123;</div><div class="line">      categoryService.delete(id);</div><div class="line"></div><div class="line">      File  imageFolder= new File(session.getServletContext().getRealPath(&quot;img/category&quot;));</div><div class="line">      File file = new File(imageFolder,id+&quot;.jpg&quot;);</div><div class="line">      file.delete();</div><div class="line"></div><div class="line">      return &quot;redirect:/admin_category_list&quot;;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SSM商城</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/03/14/SSM-类别删除/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-SSM-类别编辑" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -866,68 +939,6 @@
 
 
   
-    <article id="post-hello-there" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/15/hello-there/">hello there</a>
-    </h1>
-  
-
-        
-        <a href="/2017/01/15/hello-there/" class="archive-article-date">
-  	<time datetime="2017-01-15T11:31:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="你好"><a href="#你好" class="headerlink" title="你好"></a>你好</h1><p>这是我的第一篇文章:)</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/01/15/hello-there/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1021,15 +1032,11 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">MYBATIS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">SSM商城</a>
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1037,11 +1044,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">游走</a>
+                <a href="javascript:void(0)" class="js-tag color1">SSM商城</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Mysql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">游走</a>
               </li>
             
             <div class="clearfix"></div>
@@ -1096,6 +1107,10 @@
               <a href="https://www.google.com" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>呵呵</a>
             </li>
           
+            <li class="search-li">
+              <a href="http://skyinc.net" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>skyinc</a>
+            </li>
+          
         </ul>
   		
     	</section>
@@ -1104,7 +1119,7 @@
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">天空一无所有  为何给我安慰</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">Life is like a dandelion, seemingly free, but Involuntary.</div>
   	  	
     	</section>
     

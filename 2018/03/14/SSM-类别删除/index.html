@@ -6,17 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>行者无疆</title>
+  <title>SSM 类别删除 | 行者无疆</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="知识管理，时间管理，自我管理，阅读，语音写作，思维导图">
-<meta property="og:type" content="website">
-<meta property="og:title" content="行者无疆">
-<meta property="og:url" content="http://yoursite.com/page/2/index.html">
+  <meta name="description" content="用于删除的超链1&amp;lt;a deleteLink=&amp;quot;true&amp;quot; href=&amp;quot;admin_category_delete?id=$&amp;#123;c.id&amp;#125;&amp;quot;&amp;gt;&amp;lt;span class=&amp;quot; 	glyphicon glyphicon-trash&amp;quot;&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt;
+删除前的确认操作12345">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SSM 类别删除">
+<meta property="og:url" content="http://yoursite.com/2018/03/14/SSM-类别删除/index.html">
 <meta property="og:site_name" content="行者无疆">
-<meta property="og:description" content="知识管理，时间管理，自我管理，阅读，语音写作，思维导图">
+<meta property="og:description" content="用于删除的超链1&amp;lt;a deleteLink=&amp;quot;true&amp;quot; href=&amp;quot;admin_category_delete?id=$&amp;#123;c.id&amp;#125;&amp;quot;&amp;gt;&amp;lt;span class=&amp;quot; 	glyphicon glyphicon-trash&amp;quot;&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt;
+删除前的确认操作12345">
+<meta property="og:updated_time" content="2018-03-14T01:37:38.511Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="行者无疆">
-<meta name="twitter:description" content="知识管理，时间管理，自我管理，阅读，语音写作，思维导图">
+<meta name="twitter:title" content="SSM 类别删除">
+<meta name="twitter:description" content="用于删除的超链1&amp;lt;a deleteLink=&amp;quot;true&amp;quot; href=&amp;quot;admin_category_delete?id=$&amp;#123;c.id&amp;#125;&amp;quot;&amp;gt;&amp;lt;span class=&amp;quot; 	glyphicon glyphicon-trash&amp;quot;&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/a&amp;gt;
+删除前的确认操作12345">
   
     <link rel="alternative" href="/atom.xml" title="行者无疆" type="application/atom+xml">
   
@@ -157,32 +161,62 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-hello-there" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-SSM-类别删除" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/15/hello-there/">hello there</a>
+    <h1 class="article-title" itemprop="name">
+      SSM 类别删除
     </h1>
   
 
         
-        <a href="/2017/01/15/hello-there/" class="archive-article-date">
-  	<time datetime="2017-01-15T11:31:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-15</time>
+        <a href="/2018/03/14/SSM-类别删除/" class="archive-article-date">
+  	<time datetime="2018-03-14T01:31:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-14</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="你好"><a href="#你好" class="headerlink" title="你好"></a>你好</h1><p>这是我的第一篇文章:)</p>
+        <h3 id="用于删除的超链"><a href="#用于删除的超链" class="headerlink" title="用于删除的超链"></a>用于删除的超链</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;a deleteLink=&quot;true&quot; href=&quot;admin_category_delete?id=$&#123;c.id&#125;&quot;&gt;&lt;span class=&quot; 	glyphicon glyphicon-trash&quot;&gt;&lt;/span&gt;&lt;/a&gt;</div></pre></td></tr></table></figure>
+<h3 id="删除前的确认操作"><a href="#删除前的确认操作" class="headerlink" title="删除前的确认操作"></a>删除前的确认操作</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">$(function()&#123;</div><div class="line">	$(&quot;a&quot;).click(function()&#123;</div><div class="line">		var deleteLink = $(this).attr(&quot;deleteLink&quot;);</div><div class="line">		console.log(deleteLink);</div><div class="line">		if(&quot;true&quot;==deleteLink)&#123;</div><div class="line">			var confirmDelete = confirm(&quot;确认要删除&quot;);</div><div class="line">			if(confirmDelete)</div><div class="line">				return true;</div><div class="line">			return false;</div><div class="line">			</div><div class="line">		&#125;</div><div class="line">	&#125;);</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h3 id="增加删除sql语句"><a href="#增加删除sql语句" class="headerlink" title="增加删除sql语句"></a>增加删除sql语句</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</div><div class="line">&lt;!DOCTYPE mapper</div><div class="line">        PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot;</div><div class="line">        &quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;</div><div class="line"></div><div class="line">&lt;mapper namespace=&quot;com.how2java.tmall.mapper.CategoryMapper&quot;&gt;</div><div class="line">    &lt;select id=&quot;list&quot; resultType=&quot;Category&quot;&gt;</div><div class="line">        select * from   category         order by id desc</div><div class="line">        &lt;if test=&quot;start!=null and count!=null&quot;&gt;</div><div class="line">            limit #&#123;start&#125;,#&#123;count&#125;</div><div class="line">        &lt;/if&gt;</div><div class="line"></div><div class="line">    &lt;/select&gt;</div><div class="line">    &lt;select id=&quot;total&quot; resultType=&quot;int&quot;&gt;</div><div class="line">        select count(*) from category</div><div class="line">    &lt;/select&gt;</div><div class="line">    &lt;insert id=&quot;add&quot;  keyProperty=&quot;id&quot;  useGeneratedKeys=&quot;true&quot; parameterType=&quot;Category&quot; &gt;</div><div class="line">        insert into category ( name ) values (#&#123;name&#125;)</div><div class="line">    &lt;/insert&gt;</div><div class="line">    &lt;delete id=&quot;delete&quot;&gt;</div><div class="line">        delete from category where id= #&#123;id&#125;</div><div class="line">    &lt;/delete&gt;</div><div class="line">&lt;/mapper&gt;</div></pre></td></tr></table></figure>
+<h3 id="CategoryController"><a href="#CategoryController" class="headerlink" title="CategoryController"></a>CategoryController</h3><ol>
+<li>映射路径admin_category_delete</li>
+<li>提供参数接受id注入</li>
+<li>提供session参数，用于后续定位文件位置</li>
+<li>通过categoryService删除数据</li>
+<li>通过session获取ControllerContext然后获取分类图片位置，接着删除分类图片</li>
+<li>客户端跳转到 admin_category_list</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">@RequestMapping(&quot;admin_category_delete&quot;)</div><div class="line">  public String delete(int id,HttpSession session) throws IOException &#123;</div><div class="line">      categoryService.delete(id);</div><div class="line"></div><div class="line">      File  imageFolder= new File(session.getServletContext().getRealPath(&quot;img/category&quot;));</div><div class="line">      File file = new File(imageFolder,id+&quot;.jpg&quot;);</div><div class="line">      file.delete();</div><div class="line"></div><div class="line">      return &quot;redirect:/admin_category_list&quot;;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
 
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -193,7 +227,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SSM商城</a>
         		</li>
       		
 		</ul>
@@ -202,18 +236,74 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/01/15/hello-there/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2018/03/14/SSM-类别删除/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
 
-
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2018/01/23/SSM-类别编辑/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">SSM 类别编辑</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
 
 
@@ -221,70 +311,11 @@
 
 
   
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/15/hello-world/">Hello World</a>
-    </h1>
+    <div class="duoshuo"></div>
   
 
-        
-        <a href="/2017/01/15/hello-world/" class="archive-article-date">
-  	<time datetime="2017-01-15T10:10:05.845Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/01/15/hello-world/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
 
 
-
-
-
-
-
-
-  
-  
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
-    </nav>
-  
 
 
           </div>
@@ -306,8 +337,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
