@@ -6,24 +6,28 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Mysql select statement | 行者无疆</title>
+  <title>Entity Relationship Modeling Examples | 行者无疆</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="select statement可以从表或视图中查询数据
-syntax of the SELECT statement:
-1234567891011SELECT     column_1, column_2, ...FROM    table_1[INNER | LEFT |RIGHT] JOIN table_2 ON conditionsWHERE    conditionsGROUP BY c">
+  <meta name="description" content="This section explains the requirements for our three example databases—music, university, and flight—and shows you their Entity Relationship diagrams:
+
+The music database is designed to store details">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Mysql select statement">
-<meta property="og:url" content="http://yoursite.com/2018/01/17/Mysql-select-statement/index.html">
+<meta property="og:title" content="Entity Relationship Modeling Examples">
+<meta property="og:url" content="http://yoursite.com/2018/03/20/Entity-Relationship-Modeling-Examples/index.html">
 <meta property="og:site_name" content="行者无疆">
-<meta property="og:description" content="select statement可以从表或视图中查询数据
-syntax of the SELECT statement:
-1234567891011SELECT     column_1, column_2, ...FROM    table_1[INNER | LEFT |RIGHT] JOIN table_2 ON conditionsWHERE    conditionsGROUP BY c">
-<meta property="og:updated_time" content="2018-01-17T12:00:52.145Z">
+<meta property="og:description" content="This section explains the requirements for our three example databases—music, university, and flight—and shows you their Entity Relationship diagrams:
+
+The music database is designed to store details">
+<meta property="og:image" content="http://yoursite.com/2018/03/20/Entity-Relationship-Modeling-Examples/1.png">
+<meta property="og:image" content="http://yoursite.com/2018/03/20/Entity-Relationship-Modeling-Examples/2.png">
+<meta property="og:image" content="http://yoursite.com/2018/03/20/Entity-Relationship-Modeling-Examples/3.png">
+<meta property="og:updated_time" content="2018-03-20T03:52:42.635Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mysql select statement">
-<meta name="twitter:description" content="select statement可以从表或视图中查询数据
-syntax of the SELECT statement:
-1234567891011SELECT     column_1, column_2, ...FROM    table_1[INNER | LEFT |RIGHT] JOIN table_2 ON conditionsWHERE    conditionsGROUP BY c">
+<meta name="twitter:title" content="Entity Relationship Modeling Examples">
+<meta name="twitter:description" content="This section explains the requirements for our three example databases—music, university, and flight—and shows you their Entity Relationship diagrams:
+
+The music database is designed to store details">
+<meta name="twitter:image" content="http://yoursite.com/2018/03/20/Entity-Relationship-Modeling-Examples/1.png">
   
     <link rel="alternative" href="/atom.xml" title="行者无疆" type="application/atom+xml">
   
@@ -164,120 +168,152 @@ syntax of the SELECT statement:
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Mysql-select-statement" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Entity-Relationship-Modeling-Examples" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Mysql select statement
+      Entity Relationship Modeling Examples
     </h1>
   
 
         
-        <a href="/2018/01/17/Mysql-select-statement/" class="archive-article-date">
-  	<time datetime="2018-01-17T11:56:48.632Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-17</time>
+        <a href="/2018/03/20/Entity-Relationship-Modeling-Examples/" class="archive-article-date">
+  	<time datetime="2018-03-20T03:32:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-20</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="select-statement可以从表或视图中查询数据"><a href="#select-statement可以从表或视图中查询数据" class="headerlink" title="select statement可以从表或视图中查询数据"></a>select statement可以从表或视图中查询数据</h3><hr>
-<p>syntax of the SELECT statement:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">SELECT </div><div class="line">    column_1, column_2, ...</div><div class="line">FROM</div><div class="line">    table_1</div><div class="line">[INNER | LEFT |RIGHT] JOIN table_2 ON conditions</div><div class="line">WHERE</div><div class="line">    conditions</div><div class="line">GROUP BY column_1</div><div class="line">HAVING group_conditions</div><div class="line">ORDER BY column_1</div><div class="line">LIMIT offset, length;</div></pre></td></tr></table></figure>
-<p>SELECT statement examples：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">SELECT</div><div class="line">lastname,firstname,jobtype </div><div class="line">FROM</div><div class="line">employees;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELECT * FROM employees;</div></pre></td></tr></table></figure>
-<hr>
-<h3 id="MySQL-DISTINCT-clause"><a href="#MySQL-DISTINCT-clause" class="headerlink" title="MySQL DISTINCT clause"></a>MySQL DISTINCT clause</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">SELECT DISTINCT</div><div class="line">    columns</div><div class="line">FROM</div><div class="line">    table_name</div><div class="line">WHERE</div><div class="line">    where_conditions;</div></pre></td></tr></table></figure>
-<p>MySQL DISTINCT example:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">SELECT DISTINCT</div><div class="line">lastname </div><div class="line">FROM</div><div class="line">employees</div><div class="line">ORDER BY lastname;</div></pre></td></tr></table></figure>
-<ol>
-<li>If a column has NULL values and you use the DISTINCT clause for that column, MySQL keeps one NULL value and eliminates the other.</li>
-<li>use the DISTINCT clause with more than one column. In this case, MySQL uses the combination of all columns to determine the uniqueness of the row in the result set.</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">SELECT DISTINCT</div><div class="line">    state, city</div><div class="line">FROM</div><div class="line">    customers</div><div class="line">WHERE</div><div class="line">    state IS NOT NULL</div><div class="line">ORDER BY state , city;</div></pre></td></tr></table></figure>
-<ol>
-<li>use the GROUP BY clause in the SELECT statement without using aggregate functions, the GROUP BY clause behaves like the DISTINCT clause.</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">SELECT</div><div class="line">  state</div><div class="line">FROM</div><div class="line">  customers</div><div class="line">GROUP BY</div><div class="line">  state;</div></pre></td></tr></table></figure>
-<ol>
-<li>use the DISTINCT clause with an aggregate function e.g., SUM, AVG, and COUNT, to remove duplicate rows before MySQL applies the aggregate function to the result set.</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">SELECT </div><div class="line">    COUNT(DISTINCT state)</div><div class="line">FROM</div><div class="line">    customers</div><div class="line">WHERE</div><div class="line">    country = &apos;USA&apos;;</div></pre></td></tr></table></figure>
-<ol>
-<li>use the DISTINCT clause with the LIMIT clause, MySQL stops searching immediately when it finds the number of unique rows specified in the LIMIT clause</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">SELECT DISTINCT</div><div class="line">    state</div><div class="line">FROM</div><div class="line">    customers</div><div class="line">WHERE</div><div class="line">    state IS NOT NULL</div><div class="line">LIMIT 5;</div></pre></td></tr></table></figure>
-<h3 id="WHERE-clause"><a href="#WHERE-clause" class="headerlink" title="WHERE clause"></a>WHERE clause</h3><p>use WHERE clause to specify exact rows to select based on particular filter express or condition</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">SELECT </div><div class="line">    lastname,firstname,jobtype</div><div class="line">FROM</div><div class="line">    employees</div><div class="line">WHERE</div><div class="line">    jobtype=&apos;Sales Rep&apos; AND officeCode = 1;</div></pre></td></tr></table></figure>
-<p>the comparison operators that can use to form filtering expressions in the WHERE clause.</p>
-<table>
-<thead>
-<tr>
-<th>Operator</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>=</td>
-<td>Equal to. You can use it with almost any data types.</td>
-</tr>
-<tr>
-<td>&lt;&gt; or !=</td>
-<td>Not equal to.</td>
-</tr>
-<tr>
-<td>&lt;</td>
-<td>Less than. You typically use it with numeric and date/time data types.</td>
-</tr>
-<tr>
-<td>&gt;</td>
-<td>Greater than.</td>
-</tr>
-<tr>
-<td>&lt;=</td>
-<td>Less than or equal to</td>
-</tr>
-<tr>
-<td>&gt;=</td>
-<td>Greater than or equal to</td>
-</tr>
-</tbody>
-</table>
-<p>Note:</p>
-<hr>
-<ol>
-<li>some useful operators that you can use in the WHERE clause to form complex conditions:BETWEEN,LIKE,IN,IS NULL. </li>
-<li>The WHERE clause is used not only with the SELECT statement but also other SQL statements to filter rows such as DELETE and UPDATE.<h3 id="ORDER-BY-clause"><a href="#ORDER-BY-clause" class="headerlink" title="ORDER BY clause"></a>ORDER BY clause</h3>use the ORDER BY clause to sort the result set</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">SELECT column1, column2,...</div><div class="line">FROM tbl</div><div class="line">ORDER BY column1 [ASC|DESC], column2 [ASC|DESC],...</div></pre></td></tr></table></figure>
-<p>ORDER BY sort by an expression example:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">SELECT</div><div class="line"> ordernumber,</div><div class="line"> orderlinenumber,</div><div class="line"> quantityOrdered * priceEach AS subtotal</div><div class="line">FROM</div><div class="line"> orderdetails</div><div class="line">ORDER BY</div><div class="line"> ordernumber,</div><div class="line"> orderLineNumber,</div><div class="line"> subtotal;</div></pre></td></tr></table></figure>
-<p>ORDER BY with customer sort order:<br>define custom sort order use FIELD() function</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">SELECT </div><div class="line">    orderNumber, status</div><div class="line">FROM</div><div class="line">    orders</div><div class="line">ORDER BY FIELD(status,</div><div class="line">        &apos;In Process&apos;,</div><div class="line">        &apos;On Hold&apos;,</div><div class="line">        &apos;Cancelled&apos;,</div><div class="line">        &apos;Resolved&apos;,</div><div class="line">        &apos;Disputed&apos;,</div><div class="line">        &apos;Shipped&apos;);</div></pre></td></tr></table></figure>
-<p>Natural Sorting with ORDER BY Clause:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">SELECT </div><div class="line">    item_no</div><div class="line">FROM</div><div class="line">    items</div><div class="line">ORDER BY CAST(item_no AS UNSIGNED) , item_no;</div></pre></td></tr></table></figure>
-<p>the LENGTH function returns the length of a string<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">SELECT </div><div class="line">    item_no</div><div class="line">FROM</div><div class="line">    items</div><div class="line">ORDER BY LENGTH(item_no) , item_no;</div></pre></td></tr></table></figure></p>
-<p>use the parentheses statement returns the customers who locate in the USA or France and have credit limit greater than 10000:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">SELECT </div><div class="line">    customername, country, creditLimit</div><div class="line">FROM</div><div class="line">    customers</div><div class="line">WHERE</div><div class="line">    (country = &apos;USA&apos; OR country = &apos;France&apos;)</div><div class="line">        AND creditlimit &gt; 100000;</div></pre></td></tr></table></figure>
-<h3 id="IN-Operator"><a href="#IN-Operator" class="headerlink" title="IN Operator"></a>IN Operator</h3><p>The IN  operator allows you to determine if a specified value matches any one of a list or a subquery:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">SELECT </div><div class="line">    column1,column2,...</div><div class="line">FROM</div><div class="line">    table_name</div><div class="line">WHERE </div><div class="line"> (expr|column_1) IN (&apos;value1&apos;,&apos;value2&apos;,...);</div></pre></td></tr></table></figure>
-<p>find out the offices that locate in the U.S. and France:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">SELECT </div><div class="line">    officeCode, city, phone, country</div><div class="line">FROM</div><div class="line">    offices</div><div class="line">WHERE</div><div class="line">    country IN (&apos;USA&apos; , &apos;France&apos;);</div></pre></td></tr></table></figure>
-<p>get offices that do not locate in USA and France, you use NOT IN  in the WHERE clause:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">SELECT </div><div class="line">    officeCode, city, phone</div><div class="line">FROM</div><div class="line">    offices</div><div class="line">WHERE</div><div class="line">    country NOT IN (&apos;USA&apos; , &apos;France&apos;);</div></pre></td></tr></table></figure>
-<p>MySQL IN with subquery:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">SELECT </div><div class="line">    orderNumber, customerNumber, status, shippedDate</div><div class="line">FROM</div><div class="line">    orders</div><div class="line">WHERE</div><div class="line">    orderNumber IN (SELECT </div><div class="line">            orderNumber</div><div class="line">        FROM</div><div class="line">            orderDetails</div><div class="line">        GROUP BY orderNumber</div><div class="line">        HAVING SUM(quantityOrdered * priceEach) &gt; 60000);</div></pre></td></tr></table></figure>
-<h3 id="BETWEEN-Operator"><a href="#BETWEEN-Operator" class="headerlink" title="BETWEEN Operator"></a>BETWEEN Operator</h3><p>use the BETWEEN operator in the WHERE clause of the SELECT, INSERT, UPDATE, and DELETE statements:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">expr [NOT] BETWEEN begin_expr AND end_expr;</div></pre></td></tr></table></figure>
-<p>find products whose buy prices are within the ranges of $90 and $100:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">SELECT </div><div class="line">    productCode, productName, buyPrice</div><div class="line">FROM</div><div class="line">    products</div><div class="line">WHERE</div><div class="line">    buyPrice BETWEEN 90 AND 100;</div></pre></td></tr></table></figure>
-<p>get the orders whose required dates are from 01/01/2003 to 01/31/2003:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">SELECT orderNumber,</div><div class="line">         requiredDate,</div><div class="line">         status</div><div class="line">FROM orders</div><div class="line">WHERE requireddate</div><div class="line">    BETWEEN CAST(&apos;2003-01-01&apos; AS DATE)</div><div class="line">        AND CAST(&apos;2003-01-31&apos; AS DATE);</div></pre></td></tr></table></figure>
+        <p>This section explains the requirements for our three example databases—music, university, and flight—and shows you their Entity Relationship diagrams:</p>
+<ul>
+<li><p>The music database is designed to store details of a music collection, including the albums in the collection, the artists who made them, the tracks on the albums, and when each track was last played.</p>
+</li>
+<li><p>The university database captures the details of students, courses, and grades for a university.</p>
+</li>
+<li><p>The flight database stores an airline timetable of flight routes, times, and the plane types.</p>
+<a id="more"></a>
+<h3 id="The-Music-Database"><a href="#The-Music-Database" class="headerlink" title="The Music Database"></a>The Music Database</h3><p>The music database stores details of a personal music library, and could be used to manage your MP3, CD, or vinyl collection. Because this database is for a personal collection, it’s relatively simple and stores only the relationships between artists, albums, and tracks. It ignores the requirements of many music genres, making it most useful for storing popular music and less useful for storing jazz or classical music. </p>
+</li>
+</ul>
+<p>We first draw up a clear list of requirements for our database:</p>
+<ul>
+<li><p>The collection consists of albums.</p>
+</li>
+<li><p>An album is made by exactly one artist.</p>
+</li>
+<li><p>An artist makes one or more albums.</p>
+</li>
+<li><p>An album contains one or more tracks</p>
+</li>
+<li><p>Artists, albums, and tracks each have a name.</p>
+</li>
+<li><p>Each track is on exactly one album.</p>
+</li>
+<li><p>Each track has a time length, measured in seconds.</p>
+</li>
+<li><p>When a track is played, the date and time the playback began (to the nearest second) should be recorded; this is used for reporting when a track was last played, as well as the number of times music by an artist, from an album, or a track has been played.<br>There’s no requirement to capture composers, group members or sidemen, recording date or location, the source media, or any other details of artists, albums, or tracks.</p>
+</li>
+</ul>
+<p>The ER diagram derived from our requirements is shown in Figure1. You’ll notice that it consists of only one-to-many relationships: one artist can make many albums, one album can contain many tracks, and one track can be played many times. Conversely, each play is associated with one track, a track is on one album, and an album is by one artist. The attributes are straightforward: artists, albums, and tracks have names, as well as identifiers to uniquely identify each entity. The track entity has a time attribute to store the duration, and the played entity has a timestamp to store when the track was played.</p>
+<img src="/2018/03/20/Entity-Relationship-Modeling-Examples/1.png" alt="Figure1" title="Figure1">
+<p>The only strong entity in the database is Artist, which has an artist_id attribute that uniquely identifies it. Each Album entity is uniquely identified by its album_id combined with the artist_id of the corresponding Artist entity. A Track entity is similarly uniquely identified by its track_id combined with the related album_id and artist_id attributes. The Played entity is uniquely identified by a combination of its played time, and the related track_id, album_id, and artist_id attributes.</p>
+<p>What it doesn’t do<br>We’ve kept the music database simple because adding extra features doesn’t help you learn anything new, it just makes the explanations longer. If you wanted to use the music database in practice, then you might consider adding the following features:</p>
+<ul>
+<li><p>Support for compilations or various-artists albums, where each track may be by a different artist and may then have its own associated album-like details such as a recording date and time. Under this model, the album would be a strong entity, with many-to-many relationships between artists and albums.</p>
+</li>
+<li><p>Playlists, a user-controlled collection of tracks. For example, you might create a playlist of your favorite tracks from an artist.</p>
+</li>
+<li><p>Track ratings, to record your opinion on how good a track is.</p>
+</li>
+<li><p>Source details, such as when you bought an album, what media it came on, how much you paid, and so on.</p>
+</li>
+<li><p>Album details, such as when and where it was recorded, the producer and label, the band members or sidemen who played on the album, and even its artwork.</p>
+</li>
+<li><p>Smarter track management, such as modeling that allows the same track to appear on many albums.</p>
+</li>
+</ul>
+<h3 id="The-University-Database"><a href="#The-University-Database" class="headerlink" title="The University Database"></a>The University Database</h3><p>The university database stores details about university students, courses, the semester a student took a particular course (and his mark and grade if he completed it), and what degree program each student is enrolled in. The database is a long way from one that’d be suitable for a large tertiary institution, but it does illustrate relationships that are interesting to query, and it’s easy to relate to when you’re learning SQL. We explain the requirements next and discuss their shortcomings at the end of this section.</p>
+<p>Consider the following requirements list:</p>
+<ul>
+<li><p>The university offers one or more programs.</p>
+</li>
+<li><p>A program is made up of one or more courses.</p>
+</li>
+<li><p>A student must enroll in a program.</p>
+</li>
+<li><p>A student takes the courses that are part of her program.</p>
+</li>
+<li><p>A program has a name, a program identifier, the total credit points required to graduate, and the year it commenced.</p>
+</li>
+<li><p>A course has a name, a course identifier, a credit point value, and the year it commenced.</p>
+</li>
+<li><p>Students have one or more given names, a surname, a student identifier, a date of birth, and the year they first enrolled. We can treat all given names as a single object—for example, “John Paul.”</p>
+</li>
+<li><p>When a student takes a course, the year and semester he attempted it are recorded. When he finishes the course, a grade (such as A or B) and a mark (such as 60 percent) are recorded.</p>
+</li>
+<li><p>Each course in a program is sequenced into a year (for example, year 1) and a semester (for example, semester 1).</p>
+</li>
+</ul>
+<p>The ER diagram derived from our requirements is shown in Figure2. Although it is compact, the diagram uses some advanced features, including relationships that have attributes and two many-to-many relationships.</p>
+<img src="/2018/03/20/Entity-Relationship-Modeling-Examples/2.png" alt="Figure2" title="Figure2">
+<p>In our design:</p>
+<ul>
+<li><p>Student is a strong entity, with an identifier, student_id, created to be the primary key used to distinguish between students (remember, we could have several students with the same name).</p>
+</li>
+<li><p>Program is a strong entity, with the identifier program_id as the primary key used to distinguish between programs.</p>
+</li>
+<li><p>Each student must be enrolled in a program, so the Student entity participates totally in the many-to-one EnrollsIn relationship with Program. - A program can exist without having any enrolled students, so it participates partially in this relationship.</p>
+</li>
+<li><p>A Course has meaning only in the context of a Program, so it’s a weak entity, with course_id as a weak key. This means that a Course is uniquely identified using its course_id and the program_id of its owning program.</p>
+</li>
+<li><p>As a weak entity, Course participates totally in the many-to-one identifying relationship with its owning Program. This relationship has Year and Semester attributes that identify its sequence position.</p>
+</li>
+<li><p>Student and Course are related through the many-to-many Attempts relationships; a course can exist without a student, and a student can be enrolled without attempting any courses, so the participation is not total.</p>
+</li>
+<li><p>When a student attempts a course, there are attributes to capture the Year and Semester, and the Mark and Grade.</p>
+</li>
+</ul>
+<p>What it doesn’t do</p>
+<p>Our database design is rather simple, but this is because the requirements are simple. For a real university, many more aspects would need to be captured by the database. For example, the requirements don’t mention anything about campus, study mode, course prerequisites, lecturers, timetabling details, address history, financials, or assessment details. The database also doesn’t allow a student to be in more than one degree program, nor does it allow a course to appear as part of different programs.</p>
+<h3 id="The-Flight-Database"><a href="#The-Flight-Database" class="headerlink" title="The Flight Database"></a>The Flight Database</h3><p>The flight database stores details about an airline’s fleet, flights, and seat bookings. Again, it’s a hugely simplified version of what a real airline would use, but the principles are the same.</p>
+<p>Consider the following requirements list:</p>
+<ul>
+<li><p>The airline has one or more airplanes.</p>
+</li>
+<li><p>An airplane has a model number, a unique registration number, and the capacity to take one or more passengers.</p>
+</li>
+<li><p>An airplane flight has a unique flight number, a departure airport, a destination airport, a departure date and time, and an arrival date and time.</p>
+</li>
+<li><p>Each flight is carried out by a single airplane.</p>
+</li>
+<li><p>A passenger has given names, a surname, and a unique email address.</p>
+</li>
+<li><p>A passenger can book a seat on a flight.<br>The ER diagram derived from our requirements is shown in Figure3:</p>
+</li>
+</ul>
+<img src="/2018/03/20/Entity-Relationship-Modeling-Examples/3.png" alt="Figure2" title="Figure2">
+<ul>
+<li><p>An Airplane is uniquely identified by its RegistrationNumber, so we use this as the primary key.</p>
+</li>
+<li><p>A Flight is uniquely identified by its FlightNumber, so we use the flight number as the primary key. The departure and destination airports are captured in the From and To attributes, and we have separate attributes for the departure and arrival date and time.</p>
+</li>
+<li><p>Because no two passengers will share an email address, we can use the EmailAddress as the primary key for the Passenger entity.</p>
+</li>
+<li><p>An airplane can be involved in any number of flights, while each flight uses exactly one airplane, so the Flies relationship between the Airplane and Flight relationships has cardinality 1:N; because a flight cannot exist without an airplane, the Flight entity participates totally in this relationship.</p>
+</li>
+<li><p>A passenger can book any number of flights, while a flight can be booked by any number of passengers. As discussed earlier in Intermediate Entities,” we could specify an M:N Books relationship between the Passenger and Flight relationship, but considering the issue more carefully shows that there is a hidden entity here: the booking itself. We capture this by creating the intermediate entity Booking and 1:N relationships between it and the Passenger and Flight entities. Identifying such entities allows us to get a better picture of the requirements. Note that even if we didn’t notice this hidden entity, it would come out as part of the ER-to-tables mapping process we’ll describe next in Using the Entity Relationship Model.”</p>
+</li>
+</ul>
+<p>What it doesn’t do</p>
+<p>Again, this is a very simple flight database. There are no requirements to capture passenger details such as age, gender, or frequent-flier number.</p>
+<p>We’ve treated the capacity of the airplane as an attribute of an individual airplane. If, instead, we assumed that the capacity is determined by the model number, we would have created a new AirplaneModel entity with the attributes ModelNumber and Capacity. The Airplane entity would then not have a Capacity attribute.</p>
+<p>We’ve mapped a different flight number to each flight between two destinations. Airlines typically use a flight number to identify a given flight path and schedule, and they specify the date of the flight independently of the flight number. For example, there is one IR655 flight on April 1, another on April 2, and so on. Different airplanes can operate on the same flight number over time; our model would need to be extended to support this.</p>
+<p>The system also assumes that each leg of a multihop flight has a different FlightNumber. This means that a flight from Dubai to Christchurch via Singapore and Melbourne would need a different FlightNumber for the Dubai-Singapore, Singapore-Melbourne, and Melbourne-Christchurch legs.</p>
+<p>Our database also has limited ability to describe airports. In practice, each airport has a name, such as “Melbourne Regional Airport,” “Mehrabad,” or “Tullamarine.” The name can be used to differentiate between airports, but most passengers will just use the name of the town or city. This can lead to confusion, when, for example, a passenger could book a flight to Melbourne, Florida, USA, instead of Melbourne, Victoria, Australia. To avoid such problems, the International Air Transport Association (IATA) assigns a unique airport code to each airport; the airport code for Melbourne, Florida, USA is MLB, while the code for Melbourne, Victoria, Australia is MEL. If we were to model the airport as a separate entity, we could use the IATA-assigned airport code as the primary key. Incidentally, there’s an alternative set of airport codes assigned by the International Civil Aviation Organization (ICAO); under this code, Melbourne, Florida is KMLB, and Melbourne, Australia is YMML.</p>
 
       
 
@@ -312,7 +348,7 @@ syntax of the SELECT statement:
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Mysql</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">mysql</a>
         		</li>
       		
 		</ul>
@@ -368,7 +404,7 @@ syntax of the SELECT statement:
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2018/01/17/Mysql-select-statement/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2018/03/20/Entity-Relationship-Modeling-Examples/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -382,18 +418,18 @@ syntax of the SELECT statement:
   
 <nav id="article-nav">
   
-    <a href="/2018/01/17/Java工具类/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/03/20/An-introduction-to-the-Unified-Modeling-Language/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Java工具类
+          An introduction to the Unified Modeling Language
         
       </div>
     </a>
   
   
-    <a href="/2018/01/02/林夕语录/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">林夕语录</div>
+    <a href="/2018/03/14/SSM-类别删除/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">SSM 类别删除</div>
       <i class="icon-circle-right"></i>
     </a>
   
